@@ -14,6 +14,6 @@ export function navbar(location) {
   }
 
   export function test(location) {
-    return location.pathname === "/test" ||
+    return  location.pathname === "/test" ||
             location.pathname.startsWith('/test');
   }

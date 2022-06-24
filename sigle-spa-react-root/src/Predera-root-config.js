@@ -9,7 +9,7 @@ import * as isActive from "./activity-functions";
 //     ),
 //   activeWhen: ["/"],
 // });
-
+console.log("rootConfig localStorage::",localStorage.getItem('data'));
 registerApplication({
   name: "@Predera/navbar",
   app: () => System.import("@Predera/navbar"),

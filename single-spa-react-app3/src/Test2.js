@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 function Test2() {
-    return ( 
-        <div> 
-            <h1>Test2 component ...!</h1>
-        </div>
-     );
+  return (
+    <div>
+      <h1>Test2 component ...!</h1>
+    </div>
+  );
 }
 
 export default Test2;

@@ -1,24 +1,24 @@
 
 import { Link } from "@reach/router";
-import React from "react";
+import React,{ useState ,useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 export default function Root(props) {
+  let mountValue = true;
+  if (localStorage.getItem('data')) {
+    mountValue = localStorage.getItem('data') === 'true'
+  }
 
-//   const event = new Event('build');
+  const [mount,setMount] = useState(mountValue);
 
-// // Listen for the event.
-// document.getElementById('test').addEventListener('build', function (e) { console.log("this is event build") }, false);
-
-// // Dispatch the event.
-// document.getElementById('test').dispatchEvent(event);
+  useEffect(()=>{
+     localStorage.setItem('data',mount);
+  });
 
   return (
     <div className="ms-3">
-    {/* <Link className="navbar-brand" to="/">
-      Home
-    </Link> */}
-    {/* <div class="collapse navbar-collapse"> */}
       <ul className="navbar-nav">
       <li className="nav-item">
           <Link className="navbar-brand" to="/">
@@ -35,10 +35,15 @@ export default function Root(props) {
           <Link className="navbar-brand" to="/test">
              Test
           </Link>
+          <input 
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+            onChange={()=>setMount(!mount)}
+            checked ={mount}
+              />
         </li>
       </ul>
-    {/* </div> */}
   </div>
   )
-  //  <section>{props.name} is mounted!</section>;
 }
